@@ -51,8 +51,6 @@ group :development, :test do
   gem 'pry-rails'
   # Alert code indents
   gem 'rubocop', require: false
-  # Dummy data
-  gem 'faker'
 end
 
 group :development do
@@ -98,3 +96,5 @@ gem 'enum_help'
 gem 'rails-i18n'
 # Heroku
 gem 'rails_12factor', group: :production
+# Dummy data
+gem 'faker'
