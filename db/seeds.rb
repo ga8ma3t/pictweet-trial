@@ -20,6 +20,21 @@ end
 User.find_each do |user|
   user.tweets.create(
     body: Faker::Lorem.sentence,
-    image: Faker::Avatar.image
+    image: nil
+  )
+end
+
+50.times do
+  User.first.tweets.create(
+    body: Faker::Lorem.sentence,
+    image: "http://via.placeholder.com/350x150"
+  )
+  User.second.tweets.create(
+    body: Faker::Lorem.sentence,
+    image: nil
+  )
+  User.last.tweets.create(
+    body: Faker::Lorem.sentence,
+    image: "http://via.placeholder.com/200x400/ff4d570/000000"
   )
 end
