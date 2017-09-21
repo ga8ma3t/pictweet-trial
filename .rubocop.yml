@@ -1,0 +1,34 @@
+Rails:
+  Enabled: true
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+# ドキュメント用のコメントは不要
+Style/Documentation:
+  Enabled: false
+
+# モジュール名::クラス名の定義を許可
+ClassAndModuleChildren:
+  Enabled: false
+
+# メソッド名のprefixに「set_」「get_」を許可
+AccessorMethodName:
+  Enabled: false
+
+# 「and」「or」の使用を許可
+AndOr:
+  Enabled: false
+
+AllCops:
+
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'tmp/**/*'
+    - 'bin/*'

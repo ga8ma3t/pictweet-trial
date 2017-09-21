@@ -1,0 +1,15 @@
+.row.row-center{ 'data-id': tweet.id }
+  .col-sm-2.col-xs-3
+    = image_tag tweet.user.image, alt: tweet.user.username, class:"img-responsive img-circle reviews"
+  .col-sm-10.col-xs-9
+    .popover.right.show{:style => "position:relative; top=-90px; left=100px; max-width:100%; display:inline;"}
+      .arrow
+      %h3.popover-title
+        = link_to "users/#{tweet.user_id}" do
+          = tweet.username.presence || tweet.email
+      .popover-content
+        = image_tag tweet.image, class: 'img-thumbnail' if tweet.image.present?
+        = simple_format tweet.body
+        - if user_signed_in? && current_user.id == tweet.user_id
+          = link_to "Edit", "/tweets/#{tweet.id}/edit", class: 'btn btn-info btn-xs'
+          = link_to "Delete", "/tweets/#{tweet.id}/", method: :delete, 'data-confirm': 'Are you sure?', class: 'btn btn-danger btn-xs'

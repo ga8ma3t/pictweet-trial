@@ -1,0 +1,24 @@
+- if user_signed_in? && current_user.id == @user.id
+  .pull-right
+    = link_to edit_user_registration_path do
+      %i.fa.fa-cog.fa-2x{"aria-hidden" => "true"}
+
+%h1= @user.username.presence || @user.email
+
+%ul.nav.nav-pills
+  %li.active
+    %a{"data-toggle" => "pill", :href => "#home"} Home
+  %li
+    %a{"data-toggle" => "pill", :href => "#menu1"} Follower
+  %li
+    %a{"data-toggle" => "pill", :href => "#menu2"} Follow
+.tab-content
+  #home.tab-pane.fade.in.active
+    %h3 HOME
+    = render :partial => "tweets/tweet", :collection => @tweets
+  #menu1.tab-pane.fade
+    %h3 Follower
+    %p There are followers below.
+  #menu2.tab-pane.fade
+    %h3 Follow
+    %p There are follows below.

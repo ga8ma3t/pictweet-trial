@@ -27,5 +27,20 @@ module PictweetTrial
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    # Load locales files
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    # Default locale
+    # config.i18n.default_locale = :ja
+    config.i18n.available_locales = [:ja, :en]
+    # Default time zone
+    config.time_zone = 'Tokyo'
+    # Default generators
+    config.generators do |g|
+      g.assets false
+      g.helper false
+      g.template_engine = :haml
+      g.test_framework :rspec, view_specs: false, routing_specs: false
+    end
+    config.autoload_paths += %W[#{config.root}/lib]
   end
 end

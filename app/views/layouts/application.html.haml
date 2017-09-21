@@ -1,0 +1,51 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title PictweetTrial
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    %header
+      %nav.navbar.navbar-default
+        .container-fluid
+          .navbar-header
+            %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            = link_to 'PicTweetTrial ', root_path, class: 'navbar-brand'
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            -# %form.navbar-form.navbar-left
+            -#   .form-group
+            -#     %input.form-control{:placeholder => "Search", :type => "text"}/
+            -#   %button.btn.btn-default{:type => "submit"} Submit
+            %ul.nav.navbar-nav.navbar-right
+              - if user_signed_in?
+                %li
+                  = link_to "/tweets/new" do
+                    %i.fa.fa-twitter{"aria-hidden" => "true"}
+                    Tweet
+                %li
+                  = link_to "/users/#{current_user.id}" do
+                    %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
+                    My page
+                %li
+                  = link_to destroy_user_session_path, method: :delete do
+                    %i.fa.fa-sign-out{"aria-hidden" => "true"}
+                    Log out
+              - else
+                %li
+                  = link_to new_user_session_path do
+                    %i.fa.fa-sign-in{"aria-hidden" => "true"}
+                    Log in
+                %li
+                  = link_to new_user_registration_path do
+                    %i.fa.fa-user-plus{"aria-hidden" => "true"}
+                    Sign up
+    .container
+      - flash_messages
+      = yield

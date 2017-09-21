@@ -1,0 +1,4 @@
+= bootstrap_form_for(@tweet) do |f|
+  = f.text_field :image, placeholder: "Image URL"
+  = f.text_area :body, placeholder: "Leave a tweet..."
+  = f.submit "Send", class: "btn btn-success"

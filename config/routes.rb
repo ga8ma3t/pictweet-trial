@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root 'tweets#index'                        #ツイート一覧画面
+  get   'users/:id'   =>  'users#show'       #マイページ画面
+  resources :tweets
 end

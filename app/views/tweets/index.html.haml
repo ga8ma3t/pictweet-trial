@@ -1,0 +1,11 @@
+.jumbotron.text-center
+  %h1.display-3 Tweet everything!
+  %p.lead What's are you doing now?
+  - if user_signed_in?
+    %p
+      = link_to "Tweet", new_tweet_path, class: "btn btn-lg btn-success"
+  - else
+    %p
+      = link_to "Sign up today", new_user_registration_path, class: "btn btn-lg btn-success"
+
+= render :partial => "tweet", :collection => @tweets
