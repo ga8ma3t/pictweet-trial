@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: pictweet-trial_production
-  username: pictweet-trial
-  password: <%= ENV['PICTWEET-TRIAL_DATABASE_PASSWORD'] %>
+  database: heroku_cc9a6f26ccc328e
+  username: b9cc5d914cca56
+  password: <%= ENV['DATABASE_PASSWORD'] %>
