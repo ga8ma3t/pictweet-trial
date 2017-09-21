@@ -1,7 +1,7 @@
 $(document).on "ready turbolinks:load", ->
   $("#tweet .page").infinitescroll
     loading: {
-      img:     "/assets/loading.gif"
+      img:  "/img/loading.gif"
       msgText: ""
       finishedMsg: ""
     }
