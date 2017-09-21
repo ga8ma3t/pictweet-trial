@@ -51,6 +51,8 @@ group :development, :test do
   gem 'pry-rails'
   # Alert code indents
   gem 'rubocop', require: false
+  # Dummy data
+  gem 'faker'
 end
 
 group :development do
