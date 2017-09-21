@@ -81,6 +81,7 @@ gem 'devise'
 gem 'kaminari'
 # Bootstrap style
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-rails'
 gem 'bootstrap_form'

@@ -15,7 +15,11 @@
 .tab-content
   #home.tab-pane.fade.in.active
     %h3 HOME
-    = render :partial => "tweets/tweet", :collection => @tweets
+    #tweet
+      .page
+        = render @tweets
+    -# pagenate scroll
+    = paginate @tweets
   #menu1.tab-pane.fade
     %h3 Follower
     %p There are followers below.

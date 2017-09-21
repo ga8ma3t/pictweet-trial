@@ -8,4 +8,9 @@
     %p
       = link_to "Sign up today", new_user_registration_path, class: "btn btn-lg btn-success"
 
-= render :partial => "tweet", :collection => @tweets
+#tweet
+  .page
+    = render @tweets
+
+-# pagenate scroll
+= paginate @tweets
