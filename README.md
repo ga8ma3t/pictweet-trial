@@ -7,13 +7,22 @@ Things you may want to cover:
 
 * Ruby version
 
+2.4.0
+
 * System dependencies
 
-* Configuration
+- Bundler version 1.16.0
+- Server version: 5.7.16 Homebrew
 
-* Database creation
+* Install
+
+- git clone
+- bundle install
+- rails db:create db:migrate
 
 * Database initialization
+
+- rails db:seed
 
 * How to run the test suite
 
@@ -21,4 +30,8 @@ Things you may want to cover:
 
 * Deployment instructions
 
+- using heroku
+
 * ...
+
+https://pictweet-trial.herokuapp.com/
