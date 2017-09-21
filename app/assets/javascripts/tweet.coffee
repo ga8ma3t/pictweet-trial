@@ -8,5 +8,3 @@ $(document).on "ready turbolinks:load", ->
     navSelector: "nav.pagination"
     nextSelector: "nav.pagination a[rel=next]"
     itemSelector: "#tweet .tweet"
-    animate:true
-    extraScrollPx: 200
